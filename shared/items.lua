@@ -1,0 +1,1 @@
+['nightvision'] 			     = {['name'] = 'nightvision', 				    ['label'] = 'Nightvision', 				    ['weight'] = 3000, 		['type'] = 'item', 		['image'] = 'nightvision.png', 		    ['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Nightvision'},
