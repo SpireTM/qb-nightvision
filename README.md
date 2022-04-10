@@ -1,2 +1,2 @@
 # nightvision
-Simple Nightvision script
+Simple nightvision/thermalvision script
