@@ -33,3 +33,30 @@ AddEventHandler('qb-nightvision:togsu', function()
     end
 end)
 
+local thermalvision = false
+
+RegisterNetEvent('qb-thermalvision:togsu')
+AddEventHandler('qb-thermalvision:togsu', function()
+    local clothing = true
+    local player = PlayerPedId()
+    if thermalvision == false then
+        thermalvision = true
+        if clothing == true then
+            loadAnimDict("mp_masks@standard_car@ds@")
+			TaskPlayAnim(player, "mp_masks@standard_car@ds@", "put_on_mask", 2.0, 2.0, 800, 51, 0, false, false, false)
+            SetPedPropIndex(player, 0, 118, 0, 0)
+			Citizen.Wait(1000)
+			TriggerServerEvent("InteractSound_SV:PlayOnSource", "nightvision", 0.25)
+			SetSeethrough(true)
+        end
+    elseif thermalvision == true then
+        if clothing == true then
+            loadAnimDict("mp_masks@standard_car@ds@")
+			TaskPlayAnim(player, "mp_masks@standard_car@ds@", "put_on_mask", 2.0, 2.0, 800, 51, 0, false, false, false)
+			Citizen.Wait(1000)
+			SetSeethrough(false)
+			thermalvision = false
+        end
+    end
+end)
+
